@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "1053915587996",
+    "project_id": "nanobanana-57373",
+    "storage_bucket": "nanobanana-57373.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053915587996:android:3fa3b178c37eef77de9459",
+        "android_client_info": {
+          "package_name": "com.postapp.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053915587996-7kkei78097fgk2pl6err00lc50hivolo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.postapp.ai",
+            "certificate_hash": "421ca5329ad133ef372f202b8d2c1cecdce81707"
+          }
+        },
+        {
+          "client_id": "1053915587996-da5e4v7vft5lme5rukm8p58gvkoo3d03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.postapp.ai",
+            "certificate_hash": "04ccaca63512a0ea3886f38346c375b423d27189"
+          }
+        },
+        {
+          "client_id": "1053915587996-re30af7cnkih6e4100nljqp7ogbu4fmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.postapp.ai",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1053915587996-872jpn1js24c5gi8h89o54qja4nsrack.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM9kJPoetsZc32ddo9zSdQoMT1HDL5Esk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053915587996-872jpn1js24c5gi8h89o54qja4nsrack.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1053915587996-9vvkvsbpqu7fu7310ajashh8tjhm8pd4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.postapp.ai"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

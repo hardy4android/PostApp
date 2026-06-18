@@ -1,0 +1,15 @@
+{
+  "name": "postapp-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start:api": "bun --filter post-app-api start",
+    "start:app": "bun --filter PostApp start",
+    "android:app": "bun --filter PostApp android",
+    "ios:app": "bun --filter PostApp ios",
+    "install:all": "bun install"
+  }
+}

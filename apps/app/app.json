@@ -1,0 +1,168 @@
+{
+  "expo": {
+    "name": "PostApp",
+    "slug": "postapp",
+    "version": "0.2.4",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.postapp.ai",
+      "googleServicesFile": "./creds/ios/GoogleService-Info.plist",
+      "buildNumber": "31",
+      "config": {
+        "usesNonExemptEncryption": false,
+        "googleMapsApiKey": ""
+      },
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "tel",
+          "mailto"
+        ],
+        "NSLocationWhenInUseUsageDescription": "$(PRODUCT_NAME) does not require access to your location at this time.",
+        "UIBackgroundModes": [
+          "fetch"
+        ]
+      },
+      "entitlements": {},
+      "appleTeamId": "J4X6Z335VT"
+    },
+    "androidStatusBar": {
+      "translucent": true,
+      "backgroundColor": "#00000000",
+      "barStyle": "light-content"
+    },
+    "android": {
+      "versionCode": 23,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#3380FE"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.postapp.ai",
+      "googleServicesFile": "./creds/android/google-services.json",
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_ADSERVICES_AD_ID",
+        "android.permission.ACCESS_ADSERVICES_ATTRIBUTION",
+        "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      },
+      "allowBackup": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "com.android.vending.BILLING"
+      ]
+    },
+    "notification": {
+      "icon": "./assets/images/icon.png"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "./plugins/withMavenLocal.js",
+      "./plugins/withAndroidQueries.js",
+      "expo-asset",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos to upload your passport or national identity card photo.",
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to scan card.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-router",
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID for verifying your identity."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true,
+            "enableProguardInReleaseBuilds": true,
+            "kotlinVersion": "2.1.20",
+            "extraProguardRules": "-dontwarn no.nordicsemi.android.dfu.DfuBaseService\n-dontwarn no.nordicsemi.android.dfu.DfuProgressListenerAdapter\n-dontwarn no.nordicsemi.android.dfu.DfuServiceController\n-dontwarn no.nordicsemi.android.dfu.DfuServiceInitiator\n-dontwarn no.nordicsemi.android.dfu.DfuServiceListenerHelper\n-dontwarn no.nordicsemi.android.dfu.DfuProgressListener\n-dontwarn com.stripe.android.**\n-keep class com.stripe.android.** { *; }\n-keep class com.reactnativestripesdk.** { *; }\n-keep class com.stripe.android.pushProvisioning.** { *; }\n-keep class com.reactnativestripesdk.pushprovisioning.** { *; }\n-keep class com.stripe.android.pushProvisioning.EphemeralKeyUpdateListener { *; }\n-keep class com.stripe.android.pushProvisioning.PushProvisioningActivity$g { *; }\n-keep class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter$Args { *; }\n-keep class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter$Error { *; }\n-keep class com.stripe.android.pushProvisioning.PushProvisioningActivityStarter { *; }\n-keep class com.stripe.android.pushProvisioning.PushProvisioningEphemeralKeyProvider { *; }\n-keepattributes *Annotation*\n-keepattributes Signature\n-keepattributes Exceptions\n-keep class com.stripe.android.model.** { *; }\n-keep class com.stripe.android.view.** { *; }\n-keep class com.stripe.android.networking.** { *; }\n-keep class com.stripe.android.exception.** { *; }\n-keep class com.stripe.android.core.** { *; }\n\n# Nitro and react-native-iap stable (Nitro-based)\n-keep class com.margelo.nitro.** { *; }\n-keep class com.margelo.nitro.iap.** { *; }\n-keep @com.margelo.nitro.core.annotation.HybridObject class * { *; }\n-keep class * extends com.margelo.nitro.core.HybridObject { *; }\n-keep @com.margelo.nitro.core.annotation.DoNotStrip class * { *; }\n-keepclassmembers class * extends com.margelo.nitro.core.HybridObject {\n  public <init>(...);\n}\n\n# Ensure native methods are not obfuscated (Required for JSI/Nitro)\n-keepclasseswithmembernames class * {\n    native <methods>;\n}\n\n# JNI Annotations\n-keep @interface com.facebook.proguard.annotations.DoNotStrip\n-keep @com.facebook.proguard.annotations.DoNotStrip class * {\n    @com.facebook.proguard.annotations.DoNotStrip *;\n}\n\n# RN Turbomodules\n-keep class com.facebook.react.turbomodule.** { *; }"
+          },
+          "ios": {
+            "deploymentTarget": "15.5",
+            "infoPlist": {
+              "NSAppTransportSecurity": {
+                "NSAllowsArbitraryLoads": true,
+                "NSAllowsLocalNetworking": true
+              }
+            }
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#3380FE"
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/lora/Lora_500Medium.ttf",
+            "node_modules/@expo-google-fonts/lora/Lora_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/poppins/Poppins_400Regular.ttf",
+            "node_modules/@expo-google-fonts/poppins/Poppins_500Medium.ttf",
+            "node_modules/@expo-google-fonts/poppins/Poppins_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/inter/Inter_400Regular.ttf",
+            "node_modules/@expo-google-fonts/inter/Inter_500Medium.ttf",
+            "node_modules/@expo-google-fonts/inter/Inter_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/courgette/400Regular/Courgette_400Regular.ttf"
+          ]
+        }
+      ],
+      "@react-native-firebase/app",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "postapp-apartments-new",
+          "organization": "postapp-apartments-new",
+          "experimental_android": {
+            "enableAndroidGradlePlugin": true
+          }
+        }
+      ],
+      "expo-sqlite",
+      "react-native-iap"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7967dbb1-4f80-4a08-98f0-4077fa696e69"
+      }
+    },
+    "owner": "postapp"
+  }
+}
