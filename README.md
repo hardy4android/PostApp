@@ -12,6 +12,7 @@ Welcome to the PostApp Monorepo! This repository is organized as a monorepo usin
 PostAppMonoRepo/
 ├── package.json         # Root workspace configuration and scripts
 ├── bun.lock             # Monorepo lockfile
+├── demo/                # Demo assets (video walkthrough)
 ├── apps/
 │   ├── api/             # Express Node.js Backend Server
 │   └── app/             # React Native (Expo) Mobile Application
@@ -86,8 +87,21 @@ bun run ios:app
 | `bun run install:all` | Installs dependencies for all workspaces. |
 | `bun run start:api` | Starts the Express Node.js API. |
 | `bun run start:app` | Starts the Expo Metro bundler for the mobile app. |
-| `bun run android:app` | Builds and runs the mobile app natively on Android. |
+| `bun run android:app` | Builds and runs the mobile app natively on Android (debug). |
+| `bun run android:release` | Builds and runs the Android app in release variant. |
+| `bun run android:apk` | Generates a release `.apk` via Gradle (`assembleRelease`). |
+| `bun run android:bundle` | Generates a release `.aab` bundle via Gradle (`bundleRelease`). |
+| `bun run android:clean` | Cleans the Android Gradle build cache. |
 | `bun run ios:app` | Builds and runs the mobile app natively on iOS. |
+
+---
+## Demo
+
+### Video Demonstration
+
+The video below walks through all three core API features — user registration, login, and authenticated post creation — end-to-end in the running application.
+
+[▶ Watch PostApp-Demo.mov](demo/PostApp-Demo.mov)
 
 ---
 

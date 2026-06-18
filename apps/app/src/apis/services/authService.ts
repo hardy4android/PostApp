@@ -2,7 +2,7 @@ import { FETCH } from "../core/fetch";
 import { API_ROUTES } from "../endpoints/apiRoutes";
 import { AuthResponse } from "../models/auth";
 
-const BASE_URL = process.env.EXPO_PUBLIC_API || "http://localhost:8002";
+const BASE_URL = process.env.EXPO_PUBLIC_API || "https://postappapi.onrender.com";
 
 export const authService = {
   login: async (email: string, password: string): Promise<{ ok: boolean; status: number; data: AuthResponse }> => {

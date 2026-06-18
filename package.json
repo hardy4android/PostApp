@@ -9,6 +9,10 @@
     "start:api": "bun --filter post-app-api start",
     "start:app": "bun --filter PostApp start",
     "android:app": "bun --filter PostApp android",
+    "android:release": "bun --filter PostApp android-release",
+    "android:apk": "bun --filter PostApp release-apk",
+    "android:bundle": "bun --filter PostApp release-bundle",
+    "android:clean": "bun --filter PostApp clean-android",
     "ios:app": "bun --filter PostApp ios",
     "install:all": "bun install"
   }
